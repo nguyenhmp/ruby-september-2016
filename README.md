@@ -1,5 +1,5 @@
-This is the repository for the september ruby class.
-Git Work Flow:
+#This is the repository for the september ruby class.
+##Git Work Flow:
 1. Fork the repository to your own github account.(Do this online)
 2. Clone your repository. (Git clone <REPOSITORY URL>)
 3. Add the master repository as a remote with a new origin(git remote add master-repo https://github.com/nguyenhmp/ruby-september-2016)
