@@ -9,3 +9,6 @@ You now have 2 remote addresses(origin and master-repo). Origin is connected to 
 6. Commit your work git commit -m "<message about the commit >"
 7. Push to your repository: git put origin master
 8. Make a pull request on nguyenhmp github!
+
+#Always remember:
+##Commit to the master!
