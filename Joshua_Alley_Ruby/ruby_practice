@@ -1,0 +1,123 @@
+
+
+
+# Basic 13 Exercises
+
+#print 1-255
+
+# for i in 1..255
+#   puts i
+# end
+#
+# #print 1-255
+
+# for i in 1..255
+#   puts i unless i % 2 == 0
+# end
+
+#print ints and sum 0-255
+# sum = 0
+# for i in 1..255
+#   sum += i
+#   puts i
+#   puts sum
+# end
+
+# iterate and print array
+# array = [4, 6, 7, 3, 2, 4, 6, 7, 3, 2]
+# for i in array
+#   puts i
+# end
+
+# find and print max
+# array = [4, 6, 7, 3, 2, 4, 6, 7, 3, 2]
+# max = array[0]
+# for i in array
+#   if i > max
+#     max = array[i]
+#   end
+# end
+# print max
+
+# get and print average
+# array = [4, 6, 7, 3, 2, 4, 6, 7, 3, 2]
+# count = 0.0
+# for i in array
+#   count += i
+# end
+# print count/array.length
+
+
+# array with odds
+
+# array=[]
+# for i in 1..255
+#   array.push(i) unless i % 2 == 0
+# end
+# print array
+
+# #square with values
+# array = [4, 6, 7, 3, 2, 4, 6, 7, 3, 2]
+#   for i in 0..array.length-1
+#     array[i] *= array[i]
+#   end
+# print array
+
+# greater than Y
+
+# array = [4, 6, 7, 3, 2, 4, 6, 7, 3, 2]
+# y = 4
+# array.map{|i|
+#   if i > y
+#     y = i
+#   end
+#   }
+# print y
+
+# zero out negative numbers
+# array = [4, 6, -7, 3, 2, 4, 6, -7, 3, 2]
+# array = array.map{|i|
+#   if i < 0
+#     i = 0
+#   else
+#     i
+#   end
+# }
+# puts array
+
+#max min average
+# array = [4, 6, -7, 3, 2, 4, 6, -7, 3, 2]
+# max = array[0]
+# min = array[0]
+# count = 0
+# array.map!{|i|
+#   count += i
+#   if i > max
+#     max = i
+#   end
+#   if i < min
+#     min = i
+#   end
+#   }
+# puts min
+# puts max
+# puts count/array.length
+
+# shifting values of an array
+array = [4, 6, 7, 3, 2, 4, 6, 7, 3, 2]
+for i in 0..array.length-1
+  array[i]=array[i+1]
+  if array[i]==nil
+    array[i]=0
+  end
+end
+print array
+
+# number to string
+# array = [4, 6, -7, -3, 2, -4, 6, 7, 3, 2]
+# for i in 0..array.length-1
+#   if array[i] < 0
+#     array[i] = 'Dojo'
+#   end
+# end
+# print array
