@@ -26,25 +26,26 @@ class BankAccount
         else
             puts "no such account"
         end
-        puts "You have deposited #{x} in your #{type}'s  account."
+        puts "You have deposited $#{x} in your #{type}'s  account."
     end
     def withdraw(x, type)
         if type.downcase == 'checking'
             if x <= @cbalance
                 @cbalance -= x
+                "You have withdrawn $#{x} from your #{type}'s account"
             else
-                puts "insufficient funds"
+                "insufficient funds"
             end
         elsif type.downcase =='savings'
             if x <= @cbalance
                 @cbalance -= x
+                "You have withdrawn $#{x} from your #{type}'s account"
             else
-                puts "insufficient funds"
+                "insufficient funds"
             end
         else
             puts "cannot do transaction"
         end
-        puts "You have withdrawn #{x} from your #{type} account."
     end
 
     def account_information
@@ -55,7 +56,13 @@ class BankAccount
         puts "checking balcnce: $"+ @cbalance.to_s
         puts "interest rate: "+ @interest_rate.to_s
     end
+    def account_savings
+        @sbalance
+    end
+    def account_checking
+        @cbalance
+    end
 end
 
 sam = BankAccount.new
-puts sam.account_information
+sam.withdraw(1000, 'checking')
