@@ -58,9 +58,17 @@ a=1..255
 # print a.collect {|i| i*i}
 
 # --------------------Eliminate Negative Numbers-------------------------------
-# arr=[]
-# x=[1,4,5,-9]
-# print (x.select{|i| i>0})
+# x=[1,3,-4]
+# newArr=[]
+# for i in x
+# 	if  i> 0
+#    		newArr.push(i)
+# 	else
+#   		newArr.push(0)
+# 	end  
+# end
+# puts newArr.to_s
+
 
 
 # --------------------Max, Min, and Average------------------------------------
@@ -76,10 +84,25 @@ a=1..255
 
 # ---------------------Shifting the values in the array---------------------------
 
-x=[1,2,3,4,5]
-for 
-print x.shift
-print x
+# x=[1,2,3,4,5]
+# x.delete_at(0)
+# x.push(0)
+# puts x.to_s
+
+# ---------------------Number to string--------------------------------------------
+x=[1,3,-4]
+newArr=[]
+for i in x
+	if  i> 0
+   		newArr.push(i)
+	else
+  		newArr.push("Dojo")
+	end  
+end
+puts newArr.to_s
+
+
+
 
 
 
