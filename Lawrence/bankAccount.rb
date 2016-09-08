@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> b4b245f2c0dc96b3f35a00393ae2a91dfc37b8bd
 class Bankaccount
   @@totalaccounts = 0
 
