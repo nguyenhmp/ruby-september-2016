@@ -1,10 +1,12 @@
 require_relative 'human'
-class Wizard
-  @health = 50
-  @intelligence = 25
+class Wizard < Human
+  def initialize
+    @health = 50
+    @intelligence = 25
+  end
   def heal
     @health +=10
-    return self
+    return @health
   end
   def fireball(obj)
     if obj.class.ancestors.include?(Human)
@@ -12,5 +14,12 @@ class Wizard
       true
     else
       false
+    end
+  end
+  def show
+     "This wizard is at #{@health} health and at #{@intelligence} intelligence."
   end
 end
+
+# iceking = Wizard.new
+# puts iceking.class.ancestors.include?(Human)

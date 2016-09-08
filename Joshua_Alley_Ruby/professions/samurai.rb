@@ -1,5 +1,5 @@
 require_relative 'human'
-class Samurai
+class Samurai < Human
   @@no_of_samurais = 0
   @health = 200
   @@no_of_samurais +=1

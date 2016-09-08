@@ -1,5 +1,5 @@
 require_relative 'human'
-class Ninja
+class Ninja < Human 
   @stealth = 175
   def steal(obj)
     if obj.class.ancestors.include?(Human)
