@@ -1,0 +1,25 @@
+2.2.4 :003 > User.create(first_name:"Joshua", last_name:"Alley", email:"jauschalley@gmail.com", age:30)
+   (0.1ms)  begin transaction
+  SQL (0.7ms)  INSERT INTO "users" ("age", "created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 30], ["created_at", "2016-09-09 21:06:03.311439"], ["email", "jauschalley@gmail.com"], ["first_name", "Joshua"], ["last_name", "Alley"], ["updated_at", "2016-09-09 21:06:03.311439"]]
+   (1.4ms)  commit transaction
+ => #<User id: 1, first_name: "Joshua", last_name: "Alley", email: "jauschalley@gmail.com", age: 30, created_at: "2016-09-09 21:06:03", updated_at: "2016-09-09 21:06:03"> 
+2.2.4 :004 > User.create(first_name:"Winston", last_name:"Barnalley", email:"pup@dog.woof", age:4)
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "users" ("age", "created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 4], ["created_at", "2016-09-09 21:07:07.176471"], ["email", "pup@dog.woof"], ["first_name", "Winston"], ["last_name", "Barnalley"], ["updated_at", "2016-09-09 21:07:07.176471"]]
+   (2.6ms)  commit transaction
+ => #<User id: 2, first_name: "Winston", last_name: "Barnalley", email: "pup@dog.woof", age: 4, created_at: "2016-09-09 21:07:07", updated_at: "2016-09-09 21:07:07"> 
+2.2.4 :005 > User.create(first_name:"Caroline", last_name:"Barna", email:"linebarna@gmail.com", age:27)
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  INSERT INTO "users" ("age", "created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 27], ["created_at", "2016-09-09 21:07:50.787176"], ["email", "linebarna@gmail.com"], ["first_name", "Caroline"], ["last_name", "Barna"], ["updated_at", "2016-09-09 21:07:50.787176"]]
+   (1.6ms)  commit transaction
+ => #<User id: 3, first_name: "Caroline", last_name: "Barna", email: "linebarna@gmail.com", age: 27, created_at: "2016-09-09 21:07:50", updated_at: "2016-09-09 21:07:50"> 
+2.2.4 :006 > User.last
+  User Load (0.4ms)  SELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1
+ => #<User id: 3, first_name: "Caroline", last_name: "Barna", email: "linebarna@gmail.com", age: 27, created_at: "2016-09-09 21:07:50", updated_at: "2016-09-09 21:07:50"> 
+2.2.4 :007 > User.first
+  User Load (0.4ms)  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+ => #<User id: 1, first_name: "Joshua", last_name: "Alley", email: "jauschalley@gmail.com", age: 30, created_at: "2016-09-09 21:06:03", updated_at: "2016-09-09 21:06:03"> 
+2.2.4 :008 > User.all
+  User Load (1.4ms)  SELECT "users".* FROM "users"
+ => #<ActiveRecord::Relation [#<User id: 1, first_name: "Joshua", last_name: "Alley", email: "jauschalley@gmail.com", age: 30, created_at: "2016-09-09 21:06:03", updated_at: "2016-09-09 21:06:03">, #<User id: 2, first_name: "Winston", last_name: "Barnalley", email: "pup@dog.woof", age: 4, created_at: "2016-09-09 21:07:07", updated_at: "2016-09-09 21:07:07">, #<User id: 3, first_name: "Caroline", last_name: "Barna", email: "linebarna@gmail.com", age: 27, created_at: "2016-09-09 21:07:50", updated_at: "2016-09-09 21:07:50">]> 
+2.2.4 :009 > 
