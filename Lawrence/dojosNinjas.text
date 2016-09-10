@@ -1,0 +1,165 @@
+
+ojo Load (0.3ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.7ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:01:02.436242"], ["dojo_id", 1], ["first_name", "Lawrence"], ["last_name", "Brown"], ["updated_at", "2016-09-10 17:01:02.436242"]]
+   (1.7ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 1  | 1       | Lawrence   | Brown     | 2016-09-10 17:01:02 UTC | 2016-09-10 17:01:02 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :010 > Ninja.create(dojo:Dojo.first, first_name:"Allen", last_name:"Kim")
+  Dojo Load (0.4ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:01:24.525418"], ["dojo_id", 1], ["first_name", "Allen"], ["last_name", "Kim"], ["updated_at", "2016-09-10 17:01:24.525418"]]
+   (9.4ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 2  | 1       | Allen      | Kim       | 2016-09-10 17:01:24 UTC | 2016-09-10 17:01:24 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :011 > Ninja.create(dojo:Dojo.first, first_name:"Karen", last_name:"Qin")
+  Dojo Load (0.3ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:01:46.010537"], ["dojo_id", 1], ["first_name", "Karen"], ["last_name", "Qin"], ["updated_at", "2016-09-10 17:01:46.010537"]]
+   (2.9ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 3  | 1       | Karen      | Qin       | 2016-09-10 17:01:46 UTC | 2016-09-10 17:01:46 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :012 > Ninja.create(dojo:Dojo.second, first_name:"SnayHappy", last_name:"PoKer")
+  Dojo Load (0.4ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.2ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:03:50.814497"], ["dojo_id", 2], ["first_name", "SnayHappy"], ["last_name", "PoKer"], ["updated_at", "2016-09-10 17:03:50.814497"]]
+   (2.7ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 4  | 2       | SnayHappy  | PoKer     | 2016-09-10 17:03:50 UTC | 2016-09-10 17:03:50 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :013 > Ninja.create(dojo:Dojo.second, first_name:"iPhol", last_name:"Bothe")
+  Dojo Load (0.3ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:04:26.094412"], ["dojo_id", 2], ["first_name", "iPhol"], ["last_name", "Bothe"], ["updated_at", "2016-09-10 17:04:26.094412"]]
+   (2.7ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 5  | 2       | iPhol      | Bothe     | 2016-09-10 17:04:26 UTC | 2016-09-10 17:04:26 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :014 > Ninja.create(dojo:Dojo.second, first_name:"adam", last_name:"adam")
+  Dojo Load (1.1ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (1.7ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:04:54.555560"], ["dojo_id", 2], ["first_name", "adam"], ["last_name", "adam"], ["updated_at", "2016-09-10 17:04:54.555560"]]
+   (2.3ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 6  | 2       | adam       | adam      | 2016-09-10 17:04:54 UTC | 2016-09-10 17:04:54 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :015 > Ninja.create(dojo:Dojo.second, first_name:"marco", last_name:"marco")
+  Dojo Load (0.4ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:05:20.073482"], ["dojo_id", 2], ["first_name", "marco"], ["last_name", "marco"], ["updated_at", "2016-09-10 17:05:20.073482"]]
+   (2.4ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 7  | 2       | marco      | marco     | 2016-09-10 17:05:20 UTC | 2016-09-10 17:05:20 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :016 > Ninja.create(dojo:Dojo.third, first_name:"eugene", last_name:"eugene")
+  Dojo Load (0.3ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (0.3ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:05:48.120485"], ["dojo_id", 3], ["first_name", "eugene"], ["last_name", "eugene"], ["updated_at", "2016-09-10 17:05:48.120485"]]
+   (2.8ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 8  | 3       | eugene     | eugene    | 2016-09-10 17:05:48 UTC | 2016-09-10 17:05:48 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :017 > Ninja.create(dojo:Dojo.third, first_name:"scott", last_name:"scott")
+  Dojo Load (7.0ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:06:06.296782"], ["dojo_id", 3], ["first_name", "scott"], ["last_name", "scott"], ["updated_at", "2016-09-10 17:06:06.296782"]]
+   (3.0ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 9  | 3       | scott      | scott     | 2016-09-10 17:06:06 UTC | 2016-09-10 17:06:06 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :018 > Ninja.create(dojo:Dojo.third, first_name:"Chris", last_name:"Chrissy")
+  Dojo Load (4.9ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:06:32.017104"], ["dojo_id", 3], ["first_name", "Chris"], ["last_name", "Chrissy"], ["updated_at", "2016-09-10 17:06:32.017104"]]
+   (2.9ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 10 | 3       | Chris      | Chrissy   | 2016-09-10 17:06:32 UTC | 2016-09-10 17:06:32 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :019 > Ninja.all
+  Ninja Load (3.0ms)  SELECT "ninjas".* FROM "ninjas"
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 1  | 1       | Lawrence   | Brown     | 2016-09-10 17:01:02 UTC | 2016-09-10 17:01:02 UTC |
+| 2  | 1       | Allen      | Kim       | 2016-09-10 17:01:24 UTC | 2016-09-10 17:01:24 UTC |
+| 3  | 1       | Karen      | Qin       | 2016-09-10 17:01:46 UTC | 2016-09-10 17:01:46 UTC |
+| 4  | 2       | SnayHappy  | PoKer     | 2016-09-10 17:03:50 UTC | 2016-09-10 17:03:50 UTC |
+| 5  | 2       | iPhol      | Bothe     | 2016-09-10 17:04:26 UTC | 2016-09-10 17:04:26 UTC |
+| 6  | 2       | adam       | adam      | 2016-09-10 17:04:54 UTC | 2016-09-10 17:04:54 UTC |
+| 7  | 2       | marco      | marco     | 2016-09-10 17:05:20 UTC | 2016-09-10 17:05:20 UTC |
+| 8  | 3       | eugene     | eugene    | 2016-09-10 17:05:48 UTC | 2016-09-10 17:05:48 UTC |
+| 9  | 3       | scott      | scott     | 2016-09-10 17:06:06 UTC | 2016-09-10 17:06:06 UTC |
+| 10 | 3       | Chris      | Chrissy   | 2016-09-10 17:06:32 UTC | 2016-09-10 17:06:32 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+10 rows in set
+2.2.4 :020 > Ninja.create(dojo:Dojo.fourth, first_name:"scott", last_name:"scott")
+  Dojo Load (1.2ms)  SELECT  "dojos".* FROM "dojos"   ORDER BY "dojos"."id" ASC LIMIT 1 OFFSET 3
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ninjas" ("created_at", "dojo_id", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-09-10 17:07:27.256151"], ["dojo_id", 4], ["first_name", "scott"], ["last_name", "scott"], ["updated_at", "2016-09-10 17:07:27.256151"]]
+   (3.4ms)  commit transaction
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 11 | 4       | scott      | scott     | 2016-09-10 17:07:27 UTC | 2016-09-10 17:07:27 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+1 row in set
+2.2.4 :021 > Ninja.all
+  Ninja Load (2.9ms)  SELECT "ninjas".* FROM "ninjas"
++----+---------+------------+-----------+-------------------------+-------------------------+
+| id | dojo_id | first_name | last_name | created_at              | updated_at              |
++----+---------+------------+-----------+-------------------------+-------------------------+
+| 1  | 1       | Lawrence   | Brown     | 2016-09-10 17:01:02 UTC | 2016-09-10 17:01:02 UTC |
+| 2  | 1       | Allen      | Kim       | 2016-09-10 17:01:24 UTC | 2016-09-10 17:01:24 UTC |
+| 3  | 1       | Karen      | Qin       | 2016-09-10 17:01:46 UTC | 2016-09-10 17:01:46 UTC |
+| 4  | 2       | SnayHappy  | PoKer     | 2016-09-10 17:03:50 UTC | 2016-09-10 17:03:50 UTC |
+| 5  | 2       | iPhol      | Bothe     | 2016-09-10 17:04:26 UTC | 2016-09-10 17:04:26 UTC |
+| 6  | 2       | adam       | adam      | 2016-09-10 17:04:54 UTC | 2016-09-10 17:04:54 UTC |
+| 7  | 2       | marco      | marco     | 2016-09-10 17:05:20 UTC | 2016-09-10 17:05:20 UTC |
+| 8  | 3       | eugene     | eugene    | 2016-09-10 17:05:48 UTC | 2016-09-10 17:05:48 UTC |
+| 9  | 3       | scott      | scott     | 2016-09-10 17:06:06 UTC | 2016-09-10 17:06:06 UTC |
+| 10 | 3       | Chris      | Chrissy   | 2016-09-10 17:06:32 UTC | 2016-09-10 17:06:32 UTC |
+| 11 | 4       | scott      | scott     | 2016-09-10 17:07:27 UTC | 2016-09-10 17:07:27 UTC |
++----+---------+------------+-----------+-------------------------+-------------------------+
+11 rows in set
+2.2.4 :022 > Zurich = Dojo.new()
++----+------+------+-------+------------+------------+
+| id | name | city | state | created_at | updated_at |
++----+------+------+-------+------------+------------+
+|    |      |      |       |            |            |
++----+------+------+-------+------------+------------+
+1 row in set
+2.2.4 :023 > 
+
