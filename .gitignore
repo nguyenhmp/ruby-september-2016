@@ -1,4 +1,4 @@
-*/rails/*
+*/rails/*/*
 !*/rails/*/config/routes.rb
 !*/rails/*/app/controllers/*
 !*/rails/*/app/controllers/*/*
