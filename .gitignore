@@ -1,0 +1,8 @@
+*/rails/*
+!*/rails/*/config/routes.rb
+!*/rails/*/app/controllers/*
+!*/rails/*/app/controllers/*/*
+!*/rails/*/app/models/*
+!*/rails/*/app/views/*
+!*/rails/*/app/views/*/*
+!*/rails/*/app/views/*/*/*
