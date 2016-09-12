@@ -1,5 +1,5 @@
 *app*
-!*app/controllers
+!*app/controllers*
 !*app/models
 !*app/views
 *bin*
