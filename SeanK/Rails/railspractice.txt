@@ -1,0 +1,26 @@
+rails new user_login_project
+cd user_login_project
+rails g model User first_name:string last_name:string email_address:string age:integer
+rake db:migrate
+rails c
+User.create(first_name: "Sean", last_name: "Kendrick", email_address: "seanke@gmail.com", age: 26)
+User.create(first_name: "Allasdfen", last_name: "Kiasdfm", email_address: "allenkim@gmail.com", age: 40)
+User.create(first_name: "Allen", last_name: "Kim", email_address: "alleasdfnkim@gmail.com", age: 40)
+User.create(first_name: "Allasdfen", last_name: "Kiasdfm", email_address: "allenkim@gasdfasmail.com", age: 40)
+
+added the following lines to my user.rb model file
+	validates :first_name, :last_name, presence: true, length: {minimum: 2}
+	validates :email_address, presence:true
+	validates :age, presence:true, numericality: {greater_than_or_equal_to: 10, less_than: 150}
+
+back in the console
+reload!
+user1 = User.create(first_name:"sf", last_name:"daf", age:170)
+user1.errors
+user1.errors.full_messages
+User.all
+User.first
+User.last
+User.order("first_name DESC")
+User.update(3, last_name: "FGERGGG")
+User.find(4).destroy
