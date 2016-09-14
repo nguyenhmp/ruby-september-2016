@@ -10,7 +10,9 @@ class Planet
         @@planets << name
     end
 end
-
+# newPlanet1 = Planet.new("Mars", "Cold... and everything is red", 0)
+# puts newPlanet.population
+# puts $planets
 
 class SolarSystem < Planet
     attr_accessor :name
