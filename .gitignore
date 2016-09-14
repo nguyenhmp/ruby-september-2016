@@ -1,0 +1,40 @@
+#just routes
+/*patrick/rails/*/config/*
+!/*patrick/rails/*/config/routes.rb
+
+#just controllers
+!/*patrick/rails/*/app/controllers/*
+/*patrick/rails/*/app/controllers/concerns/*
+/*patrick/rails/*/app/controllers/application_controller.rb
+
+#models
+!/*patrick/rails/*/app/models/*
+/*patrick/rails/*/app/models/concerns/*
+/*patrick/rails/*/app/models/application_record.rb
+
+#views
+/*patrick/rails/*/app/views/layouts/mailer*
+
+
+#everything in app
+/*patrick/rails/*/app/assets/*
+/*patrick/rails/*/app/channels/*
+/*patrick/rails/*/app/helpers/*
+/*patrick/rails/*/app/jobs/*
+/*patrick/rails/*/app/mailers/*
+
+
+/*patrick/rails/*/bin/*
+/*patrick/rails/*/db/*
+/*patrick/rails/*/lib/*
+/*patrick/rails/*/log/*
+/*patrick/rails/*/log/.keep
+/*patrick/rails/*/public/*
+/*patrick/rails/*/test/*
+/*patrick/rails/*/tmp/*
+/*patrick/rails/*/tmp/.keep
+/*patrick/rails/*/config.ru
+/*patrick/rails/*/.gitignore
+/*patrick/rails/*/Gemfile*
+/*patrick/rails/*/Rakefile
+/*patrick/rails/*/README.md
