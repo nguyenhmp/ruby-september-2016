@@ -1,0 +1,19 @@
+rails generate model User first_name:string last_name:string
+rake db:migrate
+rails generate model Friendship user:references friend:references
+added to friendship model file
+  belongs_to :user
+  has_many :friends, class_name: "User", foreign_key: "friend_id"
+  belongs_to :friend, class_name: "User"
+added to user model file
+  has_many :friendships
+  has_many :friends, through: :friendships
+rake db:migrate
+User.create(first_name:"Phil", last_name:"Bluth")
+User.create(first_name:"Phil", last_name:"Boothe")
+Friendship.create(user:User.first, friend:User.find(2))
+User.first.friends
+User.create(first_name:"John", last_name:"Smith")
+Friendship.create(user:User.first, friend:User.find(3))
+User.first.friends
+User.where("id not in (?)", User.first.friends.select("id"))

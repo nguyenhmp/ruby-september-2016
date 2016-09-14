@@ -1,0 +1,17 @@
+<h1>Listing users</h1>
+<% @user.each do |p| %>
+  <table>
+  	<tr>
+  		<th>First name</th>
+  		<th>Last name</th>
+  		<th>Email</th>
+  	</tr>
+  	<tr>
+  		<td><%= p.first_name %></td>
+  		<td><%= p.last_name %></td>
+  		<td><%= p.email_address %></td>
+  		<td><a href='/users/<%= p.id %>/edit'>Edit</a> <a href='/users/<%= p.id %>'>Show</a> <a href='/users/<%= p.id %>' data-method='delete'>Destroy</a></td>
+  	</tr>
+  </table>
+<% end %>
+<a href='/users/new'>New Users</a>

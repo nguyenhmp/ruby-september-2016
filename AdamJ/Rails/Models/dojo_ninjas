@@ -1,0 +1,44 @@
+rails new dojo_ninjas
+rails generate model Dojo name:string city:string state:string
+rake db:migrate
+rails generate model Ninja dojo:references first_name:string last_name:string
+rake db:migrate
+rails c
+Dojo.create(name:'CodingDojo Silicon Valley', city:'Mountain View', state:'CA')
+Dojo.create(name:'CodingDojo Seattle', city:'Seattle', state:'WA')
+Dojo.create(name:'CodingDojo New York', city:'New York', state:'NY')
+Dojo.all
+dojo=Dojo.new
+dojo.errors.messages
+dojo=Dojo.update(name:'CodingDojo Chicago', city:'Chicago', state:'Illinois')
+dojo.errors.messages
+dojo.destroy
+Dojo.destroy_all
+Dojo.create(name:'CodingDojo Seattle', city:'Seattle', state:'WA')
+Dojo.create(name:'CodingDojo New York', city:'New York', state:'NY')
+Dojo.create(name:'CodingDojo Silicon Valley', city:'Mountain View', state:'CA')
+Dojo.all
+Ninja.create(first_name:"Tyrion", last_name:"Lannister", dojo:Dojo.first)
+Ninja.create(first_name:"Cersei", last_name:"Lannister", dojo:Dojo.first)
+Ninja.create(first_name:"Jamie", last_name:"Lannister", dojo:Dojo.first)
+Ninja.create(first_name:"Jon", last_name:"Snow", dojo:Dojo.find(6)) 
+Ninja.create(first_name:"Arya", last_name:"Stark", dojo:Dojo.find(6))
+Ninja.create(first_name:"Sansa", last_name:"Stark", dojo:Dojo.find(6))
+Ninja.create(first_name:"Daenerys", last_name:"Targaryen", dojo:Dojo.find(7))
+Ninja.create(first_name:"Rhaegar", last_name:"Targaryen", dojo:Dojo.find(7))
+Ninja.create(first_name:"Jon", last_name:"Targaryen", dojo:Dojo.find(7))
+Dojo.first.ninjas
+Dojo.find(6).ninjas
+Dojo.last.ninjas
+Dojo.find(6).ninjas.order(first_name: :asc)
+Dojo.find(6).destroy
+Ninja.all
+
+in dojo.rb
+before_destroy :destroy_ninjas
+      private 
+      def destroy_ninjas
+            self.ninjas.destroy_all
+      end
+
+Dojo.last.destroy
