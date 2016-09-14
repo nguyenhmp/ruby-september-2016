@@ -1,40 +1,40 @@
 #just routes
-/*patrick/rails/*/config/*
-!/*patrick/rails/*/config/routes.rb
+/*/rails/*/config/*
+!/*/rails/*/config/routes.rb
 
 #just controllers
-!/*patrick/rails/*/app/controllers/*
-/*patrick/rails/*/app/controllers/concerns/*
-/*patrick/rails/*/app/controllers/application_controller.rb
+!/*/rails/*/app/controllers/*
+/*/rails/*/app/controllers/concerns/*
+/*/rails/*/app/controllers/application_controller.rb
 
 #models
-!/*patrick/rails/*/app/models/*
-/*patrick/rails/*/app/models/concerns/*
-/*patrick/rails/*/app/models/application_record.rb
+!/*/rails/*/app/models/*
+/*/rails/*/app/models/concerns/*
+/*/rails/*/app/models/application_record.rb
 
 #views
-/*patrick/rails/*/app/views/layouts/mailer*
+/*/rails/*/app/views/layouts/mailer*
 
 
 #everything in app
-/*patrick/rails/*/app/assets/*
-/*patrick/rails/*/app/channels/*
-/*patrick/rails/*/app/helpers/*
-/*patrick/rails/*/app/jobs/*
-/*patrick/rails/*/app/mailers/*
+/*/rails/*/app/assets/*
+/*/rails/*/app/channels/*
+/*/rails/*/app/helpers/*
+/*/rails/*/app/jobs/*
+/*/rails/*/app/mailers/*
 
 
-/*patrick/rails/*/bin/*
-/*patrick/rails/*/db/*
-/*patrick/rails/*/lib/*
-/*patrick/rails/*/log/*
-/*patrick/rails/*/log/.keep
-/*patrick/rails/*/public/*
-/*patrick/rails/*/test/*
-/*patrick/rails/*/tmp/*
-/*patrick/rails/*/tmp/.keep
-/*patrick/rails/*/config.ru
-/*patrick/rails/*/.gitignore
-/*patrick/rails/*/Gemfile*
-/*patrick/rails/*/Rakefile
-/*patrick/rails/*/README.md
+/*/rails/*/bin/*
+/*/rails/*/db/*
+/*/rails/*/lib/*
+/*/rails/*/log/*
+/*/rails/*/log/.keep
+/*/rails/*/public/*
+/*/rails/*/test/*
+/*/rails/*/tmp/*
+/*/rails/*/tmp/.keep
+/*/rails/*/config.ru
+/*/rails/*/.gitignore
+/*/rails/*/Gemfile*
+/*/rails/*/Rakefile
+/*/rails/*/README.md
