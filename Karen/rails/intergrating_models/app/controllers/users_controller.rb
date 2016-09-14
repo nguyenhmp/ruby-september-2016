@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @rand_names = ['Howard','Andy', 'Emily', 'Cole', 'Nancy', 'Arnold', 'Jamie', 'Tori', 'Henry', 'Lilly', 'Rose', 'Bernard']
-    @names = [*('A'..'Z')].sample(8).join
+    # @names = [*('A'..'Z')].sample(8).join
 
   	User.create(name: @rand_names.sample)
     # User.create(name: @names)
