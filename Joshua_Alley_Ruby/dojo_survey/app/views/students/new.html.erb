@@ -1,0 +1,31 @@
+<div id="wrapper">
+	<form action="/students/create" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		Your Name: <input type="text" name="student[name]"><br>
+		Dojo Location: <select name="student[location]">
+			<option>Washington D.C.</option>
+			<option>Seattle</option>
+			<option>Mountain View</option>
+			<option>Dallas</option>
+			</select><br>
+		Favorite Language: <select name="student[language]">
+			<option>Javascript</option>
+			<option>Python</option>
+			<option>Ruby</option>
+		</select><br>
+		Comment:
+		<input type="text" name="student[comment]"><br>
+		<input type="submit" name="commit" value="Send!">
+	</form>
+</div>
+<style type="text/css">
+	*{
+		margin: 10px;
+	}
+	#wrapper{
+		margin-left: 20px;
+		margin-top: 20px;
+		border: solid black 1px;
+		width: 400px;	
+	}
+</style>

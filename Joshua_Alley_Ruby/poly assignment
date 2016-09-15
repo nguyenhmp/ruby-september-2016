@@ -1,0 +1,18 @@
+2.2.4 :001 > Comment.create(user:User.first, commentable:Post.first, content:"Plllllllease work!")
+  User Load (0.2ms)  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  Post Load (0.2ms)  SELECT  "posts".* FROM "posts"   ORDER BY "posts"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.8ms)  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "Plllllllease work!"], ["created_at", "2016-09-13 21:05:42.133966"], ["updated_at", "2016-09-13 21:05:42.133966"], ["user_id", 1]]
+   (1.7ms)  commit transaction
+ => #<Comment id: 1, content: "Plllllllease work!", user_id: 1, commentable_id: 1, commentable_type: "Post", created_at: "2016-09-13 21:05:42", updated_at: "2016-09-13 21:05:42"> 
+2.2.4 :002 > Hirb.enable
+ => true 
+2.2.4 :003 > Comment.all
+  Comment Load (0.4ms)  SELECT "comments".* FROM "comments"
++----+--------------------+---------+----------------+------------------+---------------------+----------------------+
+| id | content            | user_id | commentable_id | commentable_type | created_at          | updated_at           |
++----+--------------------+---------+----------------+------------------+---------------------+----------------------+
+| 1  | Plllllllease work! | 1       | 1              | Post             | 2016-09-13 21:05... | 2016-09-13 21:05:... |
++----+--------------------+---------+----------------+------------------+---------------------+----------------------+
+1 row in set
+2.2.4 :004 > 
