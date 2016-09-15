@@ -1,0 +1,17 @@
+<div id="wrapper">
+	<h3>Random Word (attempt # <%= session[:count] %> )</h3>
+	<div id="word">
+		<h1><%= session[:word] %></h1>
+	</div>
+	<form action="/numbers/generate" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type="submit" name="commit" value="Generate!">
+	</form>
+</div>
+<style type="text/css">
+	h1{
+		border: solid black 1px;
+		padding: 10px;
+		width: 200px;
+	}
+</style>

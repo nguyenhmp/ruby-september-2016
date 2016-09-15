@@ -1,0 +1,33 @@
+<h1>Welcome to Great Number</h1>
+<p>I am thinking of a number between 1 and 100</p>
+<p>Take a guess!</p>
+<form action="/numbers/guess" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type="text" name="guess[number]">
+	<input type="submit" name="commit" value="Submit">
+</form>
+	<% if flash[:error] %>
+		<div id="error"> <%= flash[:error] %> </div>
+	<% end %>
+	<% if flash[:high] %>
+		<div class="wrong"> <%= flash[:high] %> </div>
+	<% end %>
+	<% if flash[:low] %>
+		<div class="wrong"> <%= flash[:low] %> </div>
+	<% end %>
+	<% if flash[:success] %>
+		<div id="success"> <%= flash[:success] %> </div>
+		<form action="/reset" method="get"><input type="submit" name="commit" value="Reset!"></form>
+	<% end %>
+
+<style type="text/css">
+	#error{
+		color: red;
+	}
+	.wrong{
+		color:red;
+	}
+	#success{
+		color: green;
+	}
+</style>
