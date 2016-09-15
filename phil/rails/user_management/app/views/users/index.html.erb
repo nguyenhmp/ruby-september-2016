@@ -1,0 +1,16 @@
+<h2>All Users</h2>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+        </tr>
+    <% end %>
+</table>
+<p><a href="/users/new">New User</a></p>
