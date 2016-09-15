@@ -6,12 +6,13 @@ class NumbersController < ApplicationController
   def check
       guess = params[:guess].to_i
       if guess == session[:number]
-          redirect_to root_path, notice: "Correct! #{session[:number]} was the number!"
+          flash.notice = "Correct! #{session[:number]} was the number!"
       elsif guess < session[:number]
-          redirect_to root_path, alert: "Too low!"
+          flash.alert = "Too low!"
       elsif guess > session[:number]
-          redirect_to root_path, alert: "Too high!"
+          flash.alert = "Too high!"
       end
+      redirect_to root_path
   end
 
   def reset
