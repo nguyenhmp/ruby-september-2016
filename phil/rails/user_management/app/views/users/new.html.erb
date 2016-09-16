@@ -1,0 +1,19 @@
+<h2>New User</h2>
+<% if flash.alert %>
+<ul>
+    <% flash.alert.each do |alert| %>
+        <li><%= alert %></li>
+    <% end %>
+</ul>
+<% elsif flash.notice %>
+    <p><%= flash.notice %></p>
+<% end %>
+<form action="/users" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <p><input type="text" name="user[first_name]" placeholder="First Name" />
+    <input type="text" name="user[last_name]" placeholder="Last Name" /></p>
+    <p><input type="email" name="user[email]" placeholder="email@sample.com" />
+    <input type="password" name="user[password]" placeholder="password" /></p>
+    <input type="submit" value="Create User" />
+</form>
+<p><a href="/users">Back</a></p>

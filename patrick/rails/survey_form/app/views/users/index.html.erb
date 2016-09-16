@@ -1,0 +1,24 @@
+<div style="text-align:center">
+	<form action='/result' method='post' style="display:inline-block; text-align:right; border:solid black 1px; padding:1rem">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		Your Name:
+		<input type='text' name='user[name]' /><br>
+		Dojo Location:
+		<select name='user[location]'>
+			<option value="Mountain View">Mountain View</option>
+			<option value="Seattle">Seattle</option>
+			<option value="Chicago">Chicago</option>
+			<option value="Dallas">Dallas</option>
+		</select><br>
+		Favorite Language:
+		<select name='user[language]'>
+			<option value="Python">Python</option>
+			<option value="Ruby">Ruby</option>
+			<option value="JavaScript">JavaScript</option>
+			<option value="HTML">HTML</option>
+		</select><br>
+		Comment: <br>
+		<textarea name="user[comment]" rows="8" cols="40"></textarea><br>
+		<input type="submit">
+	</form>
+</div>

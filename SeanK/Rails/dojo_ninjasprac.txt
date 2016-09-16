@@ -1,0 +1,56 @@
+rails new dojo_ninjas
+cd dojo_ninjas
+rails g model Dojo name:string city:string state:string
+rake db:migrate
+rails g model Ninja first_name:string last_name:string dojo:references
+rake db:migrate
+
+add has_many :ninjas to dojo model file
+
+rails c
+Dojo.create()
+Dojo.create()
+Dojo.create()
+
+added lines below to dojo.rb model file and ninja.rb model file respectively
+	validates :name, :city, presence: true
+	validates :state, length: {is: 2}
+
+	validates :first_name, :last_name, presence: true
+back in the console
+
+Dojo.destroy_all
+
+dojo1 = Dojo.new(name: "CodingDojo Silicon Valley", city: "Mountain View", state: "WA")
+dojo1.save
+dojo2 = Dojo.new(name: "CodingDojo Seattle", city: "Seattle", state: "WA")
+dojo2.save
+dojo3 = Dojo.new(name: "CodingDojo New York", city: "New York", state: "NY")
+dojo3.save
+dojo4 = Dojo.new(state:"Washingtion")
+dojo4.save
+#not valid error
+Ninja.create(first_name: "Sean", last_name: "Kendrick", dojo: Dojo.first)
+Ninja.create(first_name: "Sean", last_name: "Kendriasdfck", dojo: Dojo.first)
+Ninja.create(first_name: "Sasdfasdfean", last_name: "Kendrick", dojo: Dojo.first)
+Ninja.create(first_name: "asdfasSean", last_name: "Kendrick", dojo: Dojo.find(5))
+Ninja.create(first_name: "asdfasSeasdfan", last_name: "Kendrick", dojo: Dojo.find(5))
+Ninja.create(first_name: "asdfasSeweeeeean", last_name: "Kendrick", dojo: Dojo.find(5))
+Ninja.create(first_name: "Sasd555fean", last_name: "Kendrick", dojo: Dojo.last)
+Ninja.create(first_name: "Sfean", last_name: "Kendrick", dojo: Dojo.last)
+Ninja.create(first_name: "Sasdfasn", last_name: "Kendrick", dojo: Dojo.last)
+Dojo.first.ninjas
+Dojo.find(5).ninjas
+Dojo.last.ninjas
+Dojo.find(5).ninjas.order("created_at DESC").select(:first_name)
+Dojo.find(5).destroy
+
+add in dojo.rb model file
+	before_destroy :destroy_ninjas
+
+	private
+
+	def destroy_ninjas
+		self.ninjas.destroy_all
+	end
+end

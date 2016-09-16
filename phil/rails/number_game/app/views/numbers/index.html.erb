@@ -1,0 +1,22 @@
+<h1>Great Number Game</h1>
+<p>I'm thinking of a number between 1 and 100...</p>
+
+<% if flash.alert %>
+    <h2 class="wrong"><%= flash.alert %></h2>
+<% end %>
+
+<% if flash.notice %>
+    <div class="success">
+        <h2><%= flash.notice %></h2>
+        <form action="/reset" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" />
+            <input type="submit" value="Play Again!">
+        </form>
+    </div>
+<% else %>
+    <form action="/check" method="post">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" />
+        <input type="number" min="1" max="100" name="guess" />
+        <input type="submit" value="Submit">
+    </form>
+<% end %>
