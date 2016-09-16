@@ -4,7 +4,7 @@ RSpec.describe Stack do
 		before do 
 			@stack = Stack.new
 		end
-		it 'initializes data_store to [1,2,3], back to 0' do
+		it 'initializes data_store to [], back to 0' do
 			expect(@stack.data_store).to eq([])
 			expect(@stack.back).to eq(0)
 		end

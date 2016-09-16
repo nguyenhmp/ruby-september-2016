@@ -1,0 +1,50 @@
+
+ Post Load (2.2ms)  SELECT "posts".* FROM "posts"
++----+------------+------------------+---------+---------+------------------+-------------------+
+| id | title      | content          | user_id | blog_id | created_at       | updated_at        |
++----+------------+------------------+---------+---------+------------------+-------------------+
+| 1  | CodingDojo | tis is somthin   |         |         | 2016-09-10 22... | 2016-09-10 22:... |
+| 2  | who cares  | Head Phones p... |         |         | 2016-09-10 22... | 2016-09-10 22:... |
+| 3  | Wix        | club in Geneva   |         |         | 2016-09-10 22... | 2016-09-10 22:... |
+| 4  | who cares  | Head Phones p... |         |         | 2016-09-10 22... | 2016-09-10 22:... |
+| 5  | who cares  | Head Phones p... |         |         | 2016-09-10 22... | 2016-09-10 22:... |
+| 6  | who cares  | Head Phones p... |         |         | 2016-09-10 22... | 2016-09-10 22:... |
+| 7  | who cares  | Head Phones p... |         |         | 2016-09-10 22... | 2016-09-10 22:... |
++----+------------+------------------+---------+---------+------------------+-------------------+
+7 rows in set
+2.2.4 :004 > Post.third.comments << Comment.new(body:"This is my 1st comment on post 3")
+  Post Load (0.2ms)  SELECT  "posts".* FROM "posts"   ORDER BY "posts"."id" ASC LIMIT 1 OFFSET 2
+   (0.1ms)  begin transaction
+  SQL (0.6ms)  INSERT INTO "comments" ("body", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "This is my 1st comment on post 3"], ["commentable_id", 3], ["commentable_type", "Post"], ["created_at", "2016-09-13 11:51:15.540808"], ["updated_at", "2016-09-13 11:51:15.540808"]]
+   (0.9ms)  commit transaction
+  Comment Load (0.3ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 3], ["commentable_type", "Post"]]
++----+-----------------+----------------+-----------------+------------------+------------------+
+| id | body            | commentable_id | commentable_... | created_at       | updated_at       |
++----+-----------------+----------------+-----------------+------------------+------------------+
+| 1  | This is my 1... | 3              | Post            | 2016-09-13 11... | 2016-09-13 11... |
++----+-----------------+----------------+-----------------+------------------+------------------+
+1 row in set
+2.2.4 :005 > Blog.second.comments << Comment.new(body:"This is my 1st comment on the 2nd Blog")
+  Blog Load (0.1ms)  SELECT  "blogs".* FROM "blogs"   ORDER BY "blogs"."id" ASC LIMIT 1 OFFSET 1
+   (0.1ms)  begin transaction
+  SQL (0.3ms)  INSERT INTO "comments" ("body", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "This is my 1st comment on the 2nd Blog"], ["commentable_id", 2], ["commentable_type", "Blog"], ["created_at", "2016-09-13 11:52:44.626344"], ["updated_at", "2016-09-13 11:52:44.626344"]]
+   (4.5ms)  commit transaction
+  Comment Load (0.1ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 2], ["commentable_type", "Blog"]]
++----+-----------------+----------------+-----------------+------------------+------------------+
+| id | body            | commentable_id | commentable_... | created_at       | updated_at       |
++----+-----------------+----------------+-----------------+------------------+------------------+
+| 2  | This is my 1... | 2              | Blog            | 2016-09-13 11... | 2016-09-13 11... |
++----+-----------------+----------------+-----------------+------------------+------------------+
+1 row in set
+2.2.4 :006 > User.fifth.comments << Comment.new(body:"This is my 1st comment on the 5th user")
+  User Load (0.1ms)  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1 OFFSET 4
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "comments" ("body", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "This is my 1st comment on the 5th user"], ["commentable_id", 5], ["commentable_type", "User"], ["created_at", "2016-09-13 11:53:39.638805"], ["updated_at", "2016-09-13 11:53:39.638805"]]
+   (1.6ms)  commit transaction
+  Comment Load (0.1ms)  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 5], ["commentable_type", "User"]]
++----+-----------------+----------------+-----------------+------------------+------------------+
+| id | body            | commentable_id | commentable_... | created_at       | updated_at       |
++----+-----------------+----------------+-----------------+------------------+------------------+
+| 3  | This is my 1... | 5              | User            | 2016-09-13 11... | 2016-09-13 11... |
++----+-----------------+----------------+-----------------+------------------+------------------+
+1 row in set

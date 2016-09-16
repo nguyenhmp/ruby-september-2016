@@ -1,0 +1,16 @@
+rails g model Comment body:text commentable:references{polymorphic}
+rake db:migrate
+put in all model files 
+	has_many :comments, as: :commentable
+
+newpost = Post.find(1)
+newpost.comments << Comment.new(body: "Hello World")
+newmessage = Message.find(2)
+newmessage.comments << Comment.new(body: "Hello FREEDOM")
+newblog = Blog.find(1)
+newblog.comments << Comment.new(body: "WOWWOW")
+newuser = User.first
+newuser.comments << Comment.new(body: "WOWOWEEEEE")
+
+User.first.comments.destroy
+Blog.first.comments.update(3, body: "WOOWEEFEFE")

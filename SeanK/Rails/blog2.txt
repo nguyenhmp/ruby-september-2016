@@ -1,0 +1,38 @@
+rails new blog2
+cd blog2
+rails g model User first_name:string last_name:string email_address:string
+rake db:migrate
+rails g model Blog name:string description:text
+rake db:migrate
+rails g model Owner user:references blog:references
+rake db:migrate
+rails g model Post	title:string content:text blog:references user:references
+rake db:migrate
+rails g model Message author:string message:text post:references user:references
+rake db:migrate
+
+User.create(first_name: "DOM", last_name: "kenrrrasdasck", email_address: "skedick@gmaiasdf.com") * 5
+Blog.create(name: "LovERaceDSEEF", description: "ZZZERRROZZZZZ00") * 5
+Owner.create(user:User.first, blog:Blog.find(2))
+Owner.create(user:User.first, blog:Blog.first)
+Owner.create(user:User.first, blog:Blog.last)
+Owner.create(user:User.last, blog:Blog.find(5))
+Owner.create(user:User.find(3), blog: Blog.first)
+Owner.create(user:User.find(3), blog: Blog.find(2))
+Owner.create(user:User.find(3), blog: Blog.find(3))
+Owner.create(user:User.find(3), blog: Blog.find(4))
+Owner.create(user:User.find(3), blog: Blog.last)
+Post.create(user:User.first, blog:Blog.find(2), title: "LOVE so reasdfasdfaeal", content: "WOWFREEFSEFEEEE") * 3
+Post.create(user:User.find(2), blog:Blog.last, title: "sdfEasdfEEWOWOE", content: "FREESLAGWsadfasdfW") * 5
+Post.create(user:User.find(3), blog:Blog.first, title: "WOWLOVEIS", content: "WOWOWOOWOWOWOW") * 2
+Message.create(user:User.find(3), post:Post.first, author: "Hey theasdfasre", message: "HellO MANasdfsdfY") * 2
+Message.create(user:User.find(3), post:Post.find(2), author: "Wowfsee", message:"WOasfsidfj") * 3
+Message.create(user:User.find(4), post:Post.last, author: "FDFD", message: "FAKEE LOVE") * 3
+Post.update(2, user: User.last)
+Post.update(2, content: "SJFJSDJFSDJJFJ")
+User.find(3).blogs
+User.find(3).posts
+Blog.first.posts.joins(:user).select("*")
+Blog.find(2).posts.joins(:messages).joins(:user).select("*")
+Blog.first.owners
+Owner.first.destroy
