@@ -1,0 +1,27 @@
+<div id="top">
+	<h2>Thank you for submitting this form. You have submitted this form <%= @count %> times.</h2>
+</div>
+<div id="bottom">
+	<h2>Submitted Information</h2>
+	<h3>Name: <%= @student.name %></h3>
+	<h3>Dojo Location: <%= @student.location %></h3>
+	<h3>Favorite Language: <%= @student.language %></h3>
+	<h3>Comment: <%= @student.comment %></h3>
+	<a href="/students/new">Go Back</a>
+</div>
+<style type="text/css">
+	#top{
+		border: solid black 1px;
+		padding: 10px;
+		margin: 20px;
+		color: lightgreen;
+	}
+	#bottom{
+		border: solid black 1px;
+		padding: 10px;
+		margin: 20px;
+	}
+	#bottom h3{
+		margin-left: 25px;
+	}
+</style>
