@@ -1,0 +1,26 @@
+<h1>New Product</h1>
+<form action="/products" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    Category:
+    <select name="product[category]">
+        <% @categories.each do |category| %>
+        <option value="<%= category.id%>"><%= category.name%></option>
+        <% end %>
+    </select><br>
+    Name: <input type="text" name="product[name]" autofocus><br>
+    Description: <input type="text" name="product[description]"><br>
+    Price: <input type="float" name="product[price]"><br>
+    <input type="submit" value="Create">
+</form>
+<br>
+<a href="/products">Back</a>
+<style>
+* {
+    font-family: arial, sans-serif;
+}
+form {
+    display: inline-block;
+    text-align: right;
+}
+</style>
+</form>

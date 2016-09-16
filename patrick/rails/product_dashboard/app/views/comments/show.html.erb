@@ -1,0 +1,36 @@
+<h1>All Comments</h1>
+<table>
+    <thead>
+        <th>Comments</th>
+        <th>Product</th>
+    </thead>
+    <tbody>
+        <% @comments.each do |comment| %>
+        <tr>
+            <td><%= comment.comment %></td>
+            <td><%= comment.product.name %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<a href="/products">Back</a>
+<style>
+* {
+    font-family: arial;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
