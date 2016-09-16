@@ -1,3 +1,0 @@
-Blog.find(1).posts
-Blog.find(5).posts.order(title: :desc)
-Blog.first(4)
