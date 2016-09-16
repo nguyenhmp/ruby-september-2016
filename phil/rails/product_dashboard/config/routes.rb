@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'comments' => 'comments#index'
+  post 'comments' => 'comments#create'
+
   get 'products' => 'products#index'
   get 'products/new' => 'products#new'
   get 'products/:id' => 'products#show'
