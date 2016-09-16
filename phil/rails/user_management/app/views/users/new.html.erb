@@ -5,6 +5,8 @@
         <li><%= alert %></li>
     <% end %>
 </ul>
+<% elsif flash.notice %>
+    <p><%= flash.notice %></p>
 <% end %>
 <form action="/users" method="post">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -14,3 +16,4 @@
     <input type="password" name="user[password]" placeholder="password" /></p>
     <input type="submit" value="Create User" />
 </form>
+<p><a href="/users">Back</a></p>
