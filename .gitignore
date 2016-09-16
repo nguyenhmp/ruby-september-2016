@@ -39,3 +39,4 @@
 /*/rails/*/Rakefile
 /*/rails/*/README.md
 /*/rails/*/vendor/*
+*.DS*
