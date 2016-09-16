@@ -1,0 +1,71 @@
+<div class="wrapper">
+    <div class="top">
+        Your Gold: <span><%=@gold%></span>
+        <a href="/reset"><button>Play Again!</button></a>
+    </div>
+    <div class="square">
+        <h5>Farm</h5>
+        <p>(earns 10-20 golds)</p>
+        <form action="/process">
+            <input type="hidden" name="click" value="farm">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="square">
+        <h5>Cave</h5>
+        <p>(earns 5-10 golds)</p>
+        <form action="/process">
+            <input type="hidden" name="click" value="cave">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="square">
+        <h5>House</h5>
+        <p>(earns 2-5 golds)</p>
+        <form action="/process">
+            <input type="hidden" name="click" value="house">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="square">
+        <h5>Casino</h5>
+        <p>(earns/takes 0-50 golds)</p>
+        <form action="/process">
+            <input type="hidden" name="click" value="casino">
+            <input type="submit" value="Find Gold!">
+        </form>
+    </div>
+    <div class="bottom">
+        <% @logs.each do |x| %>
+            <p><%= x %></p>
+        <% end %>
+    </div>
+</div>
+<style>
+    .wrapper {
+        text-align: center;
+        padding: 4rem;
+    }
+    .top {
+        text-align: left
+    }
+    span {
+        border: solid black 1px;
+        padding: 0 3rem;
+        height: auto;
+
+    }
+    .square {
+        border: solid black 1px;
+        display: inline-block;
+        height: 10rem;
+        width:10rem;
+        margin: 2rem 0.8rem;
+    }
+    .bottom {
+        text-align: left;
+    }
+    .bottom p {
+        margin: 0.2rem auto;
+    }
+</style>

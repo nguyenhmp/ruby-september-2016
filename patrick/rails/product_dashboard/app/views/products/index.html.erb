@@ -1,0 +1,50 @@
+<h1>Listing Products</h1>
+<a href="/comments"><button>All Comments</button></a>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <% @products.each do |product|%>
+        <tr>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td>$<%= product.price %></td>
+            <td><%= product.category.name %></td>
+            <td>
+                <a href="/products/<%= product.id %>">Show</a> |
+                <a href="/products/<%= product.id %>/edit">Edit</a> |
+                <a href="/products/<%= product.id %>" data-method ="delete">Delete</a>
+            </td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>
+<a href="/products/new">New Product</a>
+<style>
+* {
+    font-family: arial, sans-serif;
+}
+h1 {
+    display: inline-block;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
