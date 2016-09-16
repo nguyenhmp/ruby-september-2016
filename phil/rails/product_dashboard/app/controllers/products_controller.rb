@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
     before_action :get_product, only: [:show, :edit, :update, :destroy]
+    before_action :get_categories, only: [:new, :edit]
 
   def index
-      @products = Product.all
+      @products = Product.joins(:category)
   end
   def show
   end
@@ -37,8 +38,11 @@ class ProductsController < ApplicationController
   def get_product
       @product = Product.find(params[:id])
   end
+  def get_categories
+      @categories = Category.all
+  end
 
   def product_params
-      params.require(:product).permit(:name, :description, :price)
+      params.require(:product).permit(:name, :description, :price, :category_id)
   end
 end
