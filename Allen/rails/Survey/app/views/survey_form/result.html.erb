@@ -1,0 +1,12 @@
+<div class="">
+
+  <% if flash[:success] %>
+  <h3><%= flash[:success]%></h3> 
+  <% end %>
+
+  <!-- <%= @result%> -->
+  <p> First Name: <%= @result['name']%></p>
+  <p> Dojo location: <%= @result['location']%></p>
+  <p> Favorite language: <%= @result['language']%></p>
+  <p> Comments:  <%= @result['comment']%></p>
+</div>

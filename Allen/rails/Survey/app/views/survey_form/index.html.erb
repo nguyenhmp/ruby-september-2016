@@ -1,0 +1,25 @@
+<h1>SurveyForm#index</h1>
+
+<form class="form" action="/survey_form/add" method="post">
+  <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+  <p>Your Name: <input type="text" name="survey_form[name]"></p>
+  <p>Dojo Location:
+    <select name = "survey_form[location]">
+      <option value="Mountain view">Mountain view</option>
+      <option value="Washington">Washington</option>
+      <option value="San Fran">San Fran</option>
+      <option value="San Diego">San Diego</option>
+    </select>
+    </p>
+
+  <p>Favorite Language:
+    <select name = "survey_form[language]">
+      <option value="JavaScript">Javascript</option>
+      <option value="Python">Python</option>
+      <option value="not ruby">Not Ruby</option>
+      <option value="Java">Java</option>
+    </select>
+  </p>
+  <p>Comment: <textarea rows="8" cols="40" name = "survey_form[comment]"></textarea> </p>
+  <p><input type="submit"></p>
+</form>
