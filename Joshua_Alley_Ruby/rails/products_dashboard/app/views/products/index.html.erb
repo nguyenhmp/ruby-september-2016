@@ -1,0 +1,43 @@
+<h1>Listing Products</h1><a href="/products/comments">Comments</a>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Category</th>
+		<th> </th>
+		<th> </th>
+		<th> </th>
+	</tr>
+	<% for product in @products %>
+	<tr>
+		<td><%= product.name %></td>
+		<td><%= product.description %></td>
+		<td>$<%= product.price %></td>
+		<td><%= product.category %></td>
+		<td><a href="/products/show/<%= product.id %>">Show</a></td>
+		<td><a href="/products/<%= product.id %>/edit">Edit</a></td>
+		<td><a href="/products/destroy/<%= product.id %>">Remove</a></td>
+	</tr>
+	<% end %>
+</table>
+<a href="products/new">New Product</a>
+
+
+
+
+<style type="text/css">
+	th{
+		border: solid black 1px;
+		padding: 5px;
+	}
+	td{
+		border: solid black 1px;
+		padding: 5px;
+	}
+	table{
+		margin-left: 10px;
+		border: solid black 1px;
+	}
+</style>
+

@@ -1,0 +1,27 @@
+<h1>New Product</h1>
+<form action="/products/create" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	Name: <input type="text" name="product[name]"><br>
+	Description: <input type="text" name="product[description]"><br>
+	Price: <input type="text" name="product[price]"><br>
+	Category: <select name="product[category]">
+		<option>Recreation</option>
+		<option>Automobile</option>
+		<option>Politician</option>
+		<option>Stationary</option>
+	</select><br>
+	<input type="submit" name="commit" value="create">
+</form>
+<a href="/">Back</a>
+<style type="text/css">
+	form{
+		border: solid black 1px;
+		padding: 20px;
+		margin: 0px, 20px, 20px, 0px;
+		width: 300px;
+		text-align: center;
+	}
+	input{
+		margin: 5px;
+	}
+</style>
