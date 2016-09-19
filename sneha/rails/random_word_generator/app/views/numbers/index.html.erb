@@ -1,0 +1,24 @@
+<div class="container well">
+	<div class="word_container">
+		<!-- Show how many times a word was generated  -->
+		<h2>Random Word (attempt # <%= session[:counter] %>)</h2>
+		<!-- Show the random word if present -->
+		<p><%= session[:random_word] if session[:random_word].present? %></p>
+		<!-- Generate a word by submitting this form -->
+		<form action="/numbers/create" method="post">
+			<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/> 
+			<input type="submit" value="Generate">
+		</form>
+		<% if flash[:status] == true %>
+		<div class="well message" id="green">
+			<p><%= flash[:message] %></p>
+		</div>
+	<!-- This will be shown if the user did not get the correct answer together with the message -->
+	<% elsif flash[:status] == false %>
+		<div class="well message red">
+			<p><%= flash[:message] %></p>
+		</div>
+	<% end %>
+	</div>
+</div>
+

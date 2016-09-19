@@ -1,0 +1,16 @@
+THIS IS TO 
+rails g model Comment context:text commentable:references{polymorphic}
+
+Message.first.comments << Comment.new(context:"First comment on post 3") #one way (you're commenting on the message)#
+
+Message.first.comments.create(commentable: Post.first, context:"Blah") #second way# 
+
+User.first.comments.create(commentable: Post.first, context:"Blah")  #this changes the commentable type to User (you are commenting on the User)#
+
+
+User.first.comment.last.destroy
+User.first.comments.last.destroy
+
+Post.first.comments.create(commentable: User.first, context:"Testing")
+#commentable type is going to be post OF the first user - you create new comment with this context#
+

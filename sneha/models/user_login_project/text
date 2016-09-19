@@ -1,0 +1,8 @@
+User.all - retrieve all users
+User.first - retrieve first user
+User.last - retrieve last user
+User.order(:first_name).reverse - order by desc first_name
+User.update(1, email:"spokharel@gmail.com", age: 25) - update record
+User.find(2).destroy - delete user id 2 
+Ninja.all.where(dojo_id:1) - displays all ninjas that are located in the first entry in DOJO 
+Dojo.find(2).destroy - destroys all id

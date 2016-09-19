@@ -1,0 +1,28 @@
+<h4> Results </h4>
+
+<h5> You have submitted the survey <%= session[:counter]%> times </h5>
+
+<table>
+
+		<tr>
+			<td> Name: </td>
+			<td> <%= @student.last.name %>
+			</td>
+		</tr>
+		<tr>
+			<td> Dojo Location: </td>
+			<td> <%= @student.last.location %>
+			</td>
+		</tr>
+		<tr>
+			<td> Favorite Language: </td>
+			<td> <%= @student.last.language %>
+			</td>
+		</tr>
+		<tr>
+			<td> Comment (optional): </td>
+			<td> <%= @student.last.comment %>
+			</td>
+		</tr>
+		</table>
+		<a href="/students/index">Go Back</a>
