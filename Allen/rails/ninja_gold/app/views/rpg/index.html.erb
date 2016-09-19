@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+      .box {
+        border: 1px solid black;
+        display: inline-block;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+      }
+      .box h3{
+        margin: 0px
+      }
+
+      .show{
+        border: 1px solid black;
+        width: 690px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rpg#index</h1>
+
+    <p>Your gold: <%= session[:gold] %></p>
+
+    <div class="container">
+
+        <div class="box">
+          <h3>Farm</h3>
+          <p>(earns 10-20 gold)</p>
+          <form action="/farm" method="post">
+            <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+
+            <input type="submit" value="Find GOld">
+          </form>
+        </div>
+
+        <div class="box">
+          <h3>Cave</h3>
+          <p>(earns 5-10 gold)</p>
+          <form action="/cave" method="post">
+            <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+
+            <input type="submit" value="Find GOld">
+          </form>
+        </div>
+
+        <div class="box">
+          <h3>House</h3>
+          <p>(earns 2-5 gold)</p>
+          <form action="/house" method="post">
+            <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+
+            <input type="submit" value="Find GOld">
+          </form>
+        </div>
+
+        <div class="box">
+          <h3>Casino</h3>
+          <p>(earns/takes 0-50 gold)</p>
+          <form action="/casino" method="post">
+            <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+
+            <input type="submit" value="Find GOld">
+          </form>
+        </div>
+
+        <div class="activity">
+          <p>Activities</p>
+            <div class="show">
+              <p>
+                <%= session[:activity].each { |x| puts x } %>
+
+                <!-- <%=@farmgold%>
+                <%=@farmcave%>
+                <%=@farmhouse%>
+                <%=@farmcasino%> -->
+              </p>
+            </div>
+        </div>
+
+        <div class="clear">
+          <form action="/clear" method="post">
+            <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+
+            <input type="submit" value="Reset">
+          </form>
+        </div>
+    </div>
+  </body>
+</html>
