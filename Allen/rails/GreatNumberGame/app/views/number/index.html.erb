@@ -1,0 +1,25 @@
+<div>
+  <h2>Welcome to the Great Number Game!</h2>
+  <p>
+    I am thinking of a number between 1 and 100
+  </p>
+  <p>
+    Take a guess
+  </p>
+  <form action="/number" method="post">
+    <input name="authenticity_token" value="<%=form_authenticity_token %>" type="hidden">
+    <input type="text" name="num">
+    <input type="submit" value="Submit">
+  </form>
+
+  <% if flash[:status] == true %>
+    <p>
+      <%= flash[:message] %>
+    </p>
+
+  <% elsif flash[:status] == false %>
+    <p>
+      <%= flash[:message] %>
+    </p>
+  <%end%>
+</div>
