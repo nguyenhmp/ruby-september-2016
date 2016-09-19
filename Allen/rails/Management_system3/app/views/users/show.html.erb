@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p><%= @user.first_name %></p>
+    <p><%= @user.last_name %></p>
+    <p><%= @user.email_address %></p>
+
+    <p><a href="/users/edit/<%= @user.id %>">Edit</a> | <a href="/"> Back</a> </p>
+  </body>
+</html>

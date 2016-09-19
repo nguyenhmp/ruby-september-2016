@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/users/update/<%= @user.id %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <input type="text" name="first_name" placeholder="<%= @user.first_name %>">
+      <input type="text" name="last_name" placeholder="<%= @user.last_name %>">
+      <input type="text" name="email_address" placeholder="<%= @user.email_address %>">
+      <input type="text" name="password" placeholder="<%= @user.password %>">
+      <input type="submit" value="Update">
+    </form>
+    <p>
+      <p><a href="/users/show/<%= @user.id %>">Show</a> | <a href="/"> Back</a> </p>
+
+    </p>
+  </body>
+</html>
