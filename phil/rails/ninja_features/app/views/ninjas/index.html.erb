@@ -1,0 +1,16 @@
+<% if flash.alert %>
+    <p><%= flash.alert %></p>
+<% end %>
+<%= form_tag("/create", method:"post") do %>
+    <% if flash[:name] %>
+        <p><%= flash[:name] %></p>
+    <% end %>
+    <p><%= label_tag(:name, "Ninja Name:") %>
+    <%= text_field_tag(:name) %></p>
+    <% if flash[:description] %>
+        <p><%= flash[:description] %></p>
+    <% end %>
+    <p><%= label_tag(:description, "Ninja Description:") %>
+    <%= text_area_tag(:description) %></p>
+    <%= submit_tag("Submit") %>
+<% end %>
