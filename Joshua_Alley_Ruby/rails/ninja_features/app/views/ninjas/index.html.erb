@@ -1,0 +1,9 @@
+<form action="/ninjas/create" method="post">
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	Ninja Name: <input type="text" name="ninja[name]">
+	Ninja Description: <input type="text" name="ninja[description]">
+	<input type="submit" name="commit" value="Add Ninja!">
+</form>
+	<% if flash[:error] %>
+	<h2><%= flash[:error] %></h2>
+	<% end %>
