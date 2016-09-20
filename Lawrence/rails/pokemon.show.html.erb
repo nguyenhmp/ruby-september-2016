@@ -1,0 +1,8 @@
+<h1><%= @critter.name %></h1>
+<a href = "/pokemons/<%= @critter.id %>/edit"><button>Edit</button></a>
+
+<form action="/pokemons/<%= @critter.id %>" method ="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="submit" value="destroy">
+</form>

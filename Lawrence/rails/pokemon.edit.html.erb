@@ -1,0 +1,9 @@
+
+<h1>Edit Pokemon <%= @critter.name %></h1>
+<form action="/pokemons/<%= @critter.id %>" method='post'>
+    <input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>">
+	<input type="text" name="name" value = "<%= @critter.name%>">
+	<input type="submit" value="Upate Pokemon">
+</form>
+
