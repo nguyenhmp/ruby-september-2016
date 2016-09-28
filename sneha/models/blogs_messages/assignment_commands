@@ -1,0 +1,73 @@
+OUTSIDE RAILS C
+MODEL SET UP:
+rails g model User first_name:string last_name:string email_address:string
+rails g model Owner user:references blog:references (multiple references)
+rake db:migrate
+
+INSIDE RAILS CONSOLE (rails c)
+#Create 5 users#
+User.create(first_name:"Hermione", last_name:"Granger", email_address:"hermione@gmail.com") *5 
+
+#Create 5 blogs#
+Blog.create(description:"Hello World", name:"Fifth")
+
+#Have the first 3 blogs be owned by the first user#
+Owner.create(user:User.first, blog:Blog.find(2))
+Owner.create(user:User.first, blog:Blog.first)
+Owner.create(user:User.first, blog:Blog.third)
+
+#Have the 4th blog you create be owned by the second user#
+ Owner.create(user:User.second, blog:Blog.find(4))
+
+#Have the 5th blog you create be owned by the last user#
+Owner.create(user:User.second, blog:Blog.find(5))
+
+#Have the third user own all of the blogs that were created.#
+Owner.create(user:User.find(3), blog: Blog.first)
+Owner.create(user:User.find(3), blog: Blog.second)
+Owner.create(user:User.find(3), blog: Blog.third)
+Owner.create(user:User.find(3), blog: Blog.fourth)
+Owner.create(user:User.find(3), blog: Blog.fifth)
+
+#Have the first user create 3 posts for the blog with an id of 2. Remember that you shouldn't do Post.create(user: User.first, blog_id: 2) but more like Post.create(user: User.first, blog: Blog.find(2)). Again, you should never reference the foreign key in Rails#
+Post.create(user:User.first, blog:Blog.second, title:"OMG", content:"SHOES") 
+
+#Have the second user create 5 posts for the last Blog.#
+Post.create(user:User.second, blog:Blog.last, title:"Another", content:"Fifth") 
+
+#Have the 3rd user create several posts for different blogs.#
+Post.create(user:User.third, blog:Blog.second, title:"Another", content:"Fifth") 
+
+#Have the 3rd user create 2 messages for the first post created and 3 messages for the second post created#
+Message.create(post:Post.first, user:User.third, author:"Sneha", message:"Hello")
+Message.create(post:Post.second, user:User.third, author:"Sneha", message:"Third")
+
+#Have the 4th user create 3 messages for the last post you created.#
+Message.create(post:Post.last, user:User.find(4), author:"Sneha", message:"Third")
+
+#Change the owner of the 2nd post to the last user.#
+Post.update(2, user: User.last)
+
+#Change the 2nd post's content to be something else.#
+Post.update(2, content: "WHAT'S UP")
+
+#Retrieve all blogs owned by the 3rd user (make this work by simply doing: User.find(3).blogs).#
+User.find(3).blogs
+
+#Retrieve all posts that were created by the 3rd user#
+User.find(3).posts
+
+#Retrieve all messages left by the 3rd user#
+User.find(3).message
+
+#Retrieve all posts associated with the first blog as well as who left these posts.#
+Blog.first.posts.joins(:user).select("*")
+
+#Retrieve all messages associated with the first blog along with all the user information of those who left the messages.#
+Blog.first.posts.joins(:messages).select("*").joins(:user).select("*")
+
+#Grab all user information of those that own the first blog (make this work by allowing Blog.first.owners to work).#
+Blog.first.owners.joins(:user).select("*")
+
+#Change it so that the first blog is no longer owned by the first user.#
+Owner.first.destroy

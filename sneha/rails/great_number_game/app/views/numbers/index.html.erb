@@ -1,0 +1,22 @@
+
+<div class='container'>
+	<h3> Welcome to the Great Number Game! </h3>
+	<h5> I am thinking of a number between 1 and 100. Take a guess </h5>
+	<form action="/numbers/create" method="post">
+				<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/> 
+				<input type="text" name="number">
+				<input type="submit" value="Take a guess!">
+			</form>
+	<!-- This will be shown if the user got the correct answer -->
+	
+		<p><% if flash[:status] == true %>
+			<div class="message_true" id="green">
+				<p><%= flash[:message] %></p>
+			</div>
+		<!-- This will be shown if the user did not get the correct answer together with the message -->
+		<% elsif flash[:status] == false %>
+			<div class="message_red">
+				<p><%= flash[:message] %></p>
+			</div>
+		<% end %></p>
+</div>

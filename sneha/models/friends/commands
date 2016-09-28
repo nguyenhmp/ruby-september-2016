@@ -1,0 +1,14 @@
+commands
+
+#create user#
+User.create(first_name:"Sneha", last_name:"Pokharel")
+
+#create friendship# 
+Friendship.create(user:User.second, friend:User.second)
+
+#User.first should retrieve the first user information#
+
+#User.first.friends should display all the friend information of the first user (this should include the first name and last name of all the friends of User.first)#
+
+#Find out how you can retrieve all users who are NOT a friend with the first User#
+User.where("id NOT IN(?)", User.first.friends.select("id"))

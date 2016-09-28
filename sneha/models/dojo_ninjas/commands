@@ -1,0 +1,14 @@
+Outside Rails console:
+
+#creates model#
+rails generate model Dojo name:string, city:string, state:string
+#creates Ninja model that has 1-many relationship to Dojo model# 
+rails generate model Ninja first_name:string last_name:string Dojo:references 
+#create entry for Dojo model#
+Dojo.create(name:"DC", city:"WashingtonDC", state:"VA")
+#create entry for Ninja model using references#
+Ninja.create(Dojo:Dojo.first, first_name:"Phil", last_name:"Boothe")
+#test validations and pop up errors
+Dojo.create(name:"Seattle", city:"Bellevue").errors
+#test validations and only display message errors
+Ninja.create(Dojo:Dojo.second, first_name:"Harry").errors.full_messages
