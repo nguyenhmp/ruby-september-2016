@@ -1,0 +1,22 @@
+<h4>Name: <%= @product.name %></h4>
+<h4>Description: <%= @product.description %></h4>
+<h4>Price: $<%= @product.price %></h4>
+<h4>Category: <%= @product.category %></h4>
+<a href="/products/<%= @product.id %>/edit/">Edit</a> | <a href="/">Back</a>
+<h3>Add a Comment!</h3>
+
+<form action="/products/comment/<%= @product.id %>/" method="post">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+Comment:<input type="textarea" name="comment[content]">
+<input type="submit" name="commit" value="Add Comment!">
+	
+</form>
+
+<h3>Product Comments:</h3>
+
+<% @comments.each do |comment| %> 
+
+	<h5> <%=comment.content %>  </h5>
+
+<% end %>
+
