@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'comments' => 'comments#index'
-  post 'comments' => 'comments#create'
-
-  get 'products' => 'products#index'
-  get 'products/new' => 'products#new'
-  get 'products/:id' => 'products#show'
-  get 'products/:id/edit' => 'products#edit'
-  post 'products' => 'products#create'
-  patch 'products/:id' => 'products#update'
-  delete 'products/:id' => 'products#destroy'
+  root 'ninjas#index'
+  post '/create' => 'ninjas#create'
+  get '/success' => 'ninjas#success'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

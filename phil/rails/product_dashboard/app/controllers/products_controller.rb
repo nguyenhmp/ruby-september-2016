@@ -3,9 +3,10 @@ class ProductsController < ApplicationController
     before_action :get_categories, only: [:new, :edit]
 
   def index
-      @products = Product.joins(:category)
+      @products = Product.all
   end
   def show
+      @comments = @product.comments
   end
   def new
   end

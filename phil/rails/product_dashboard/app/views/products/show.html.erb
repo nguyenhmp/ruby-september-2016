@@ -18,3 +18,15 @@
     </tr>
 </table>
 <p><a href="/products/<%= @product.id %>/edit">Edit</a> | <a href="/products">Back</a></p>
+<h3>Comments</h3>
+<form action="/comments/" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="comment[product_id]" value="<%= @product.id %>">
+    <textarea name="comment[comment]" rows="8" cols="40" placeholder="Enter Comment..."></textarea>
+    <input type="submit" value="Add Comment">
+</form>
+<% if @comments %>
+    <% @comments.each do |comment| %>
+        <p><%= comment.comment %> (<%= comment.created_at.strftime("%D") %>)</p>
+    <% end %>
+<% end %>
