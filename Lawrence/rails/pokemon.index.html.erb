@@ -1,0 +1,8 @@
+<h1>All the Pokemons</h1>
+
+
+<%@critters.each do |x| %>
+
+<p><a href="/pokemons/<%= x.id%>"><%= x.name %></a></p>
+<%end%>
+<a href="/pokemons/new"><button> New Pokemon</button></a>
